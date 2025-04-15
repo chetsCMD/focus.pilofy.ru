@@ -1,4 +1,3 @@
-/* Общий стиль */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1E1E1E;
@@ -27,10 +26,11 @@ header h1 {
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Центрируем меню */
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0 10px;
 }
 
@@ -67,6 +67,9 @@ main {
 .topics ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    align-items: center; /* Центрируем по оси Y */
 }
 
 .topics li {
@@ -75,10 +78,9 @@ main {
 }
 
 .button {
-    display: block; /* Делаем кнопки блочными элементами */
-    width: 100%; /* Занимает всю ширину родительского блока */
-    max-width: 300px; /* Ограничиваем максимальную ширину */
-    margin: 10px auto; /* Выравниваем по центру */
+    display: block;
+    width: 300px;
+    margin: 10px auto;
     padding: 15px 30px;
     background-color: #5E5DBA;
     color: #F0F0F0;
