@@ -1,126 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilofy | Технические работы</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1e1e1e;
-            color: #f0f0f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Анимация нейронной сети */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .dot {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #66d9ef;
-            opacity: 0.8;
-        }
-
-        .line {
-            position: absolute;
-            width: 2px;
-            background-color: rgba(102, 217, 239, 0.5);
-            transition: all 0.1s ease-out;
-        }
-
-        /* Текст на странице */
-        h1 {
-            font-size: 3em;
-            margin-top: 100px;
-            color: #66d9ef;
-            text-shadow: 0 0 5px #66d9ef, 0 0 10px #66d9ef;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            color: #888;
-        }
-
-        h3 {
-            font-size: 1.2em;
-            color: #66d9ef;
-        }
-
-        .content {
-            text-align: center;
-            z-index: 1;
-        }
-
-        /* Стиль для таймеров */
-        .timer {
-            font-size: 2em;
-            margin-top: 20px;
-            color: #66d9ef;
-        }
-
-        /* Прогрессбар */
-        .progress {
-            width: 100%;
-            background-color: #ddd;
-            height: 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background-color: #66d9ef;
-            width: 0;
-            transition: width 0.5s ease;
-        }
-
-        /* Стиль для проектов */
-        .projects-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            margin: 20px auto;
-        }
-
-        .project {
-            width: 100%;
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            text-align: left;
-        }
-
-        .project h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            margin: 5px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus | Pilofy</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- Основной контент -->
-<div class="content">
-    <h1 class="glow">Технические работы</h1>
-    <h2>Скоро запустимся</h2>
-    <h3 class="glow">Pilot</h3>
+  <div class="container">
+    <header>
+      <h1>Focus</h1>
+      <p class="tagline">Библия школьника от Pilot</p>
+    </header>
+    <main>
+      <div class="card">
+        <h2>Скоро запуск</h2>
+        <p>Сайт находится в разработке. Подождите немного, и вы получите доступ к конспектам, формулам и шпаргалкам.</p>
+        <div class="countdown">
+          <span id="days">00</span><small>дн</small>
+          <span id="hours">00</span><small>ч</small>
+          <span id="minutes">00</span><small>мин</small>
+          <span id="seconds">00</span><small>сек</small>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 Pilofy.ru — Pilot</p>
+    </footer>
+  </div>
+
+  <script>
+    // Таймер
+    const launchDate = new Date("2025-06-01T00:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector(".countdown").innerHTML = "Уже доступно!";
+        return;
+      }
+      document.getElementById("days").textContent = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, "0");
+      document.getElementById("hours").textContent = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, "0");
+    }, 1000);
+  </script>
 </body>
 </html>
