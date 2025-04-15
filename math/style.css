@@ -71,16 +71,21 @@ main {
 
 .topics li {
     margin: 20px 0;
+    width: 100%;
 }
 
 .button {
-    display: inline-block;
+    display: block; /* Делаем кнопки блочными элементами */
+    width: 100%; /* Занимает всю ширину родительского блока */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
+    margin: 10px auto; /* Выравниваем по центру */
     padding: 15px 30px;
     background-color: #5E5DBA;
     color: #F0F0F0;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2em;
+    text-align: center;
     transition: background-color 0.3s, transform 0.2s;
 }
 
