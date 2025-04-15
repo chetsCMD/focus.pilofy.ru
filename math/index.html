@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Математика — Focus PILOFY</title>
     <link rel="stylesheet" href="../style.css"> <!-- Подключение общего стиля -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.10.0/dist/gsap.min.js"></script> <!-- Для анимаций -->
 </head>
 <body>
     <header>
         <h1>Математика</h1>
         <nav>
             <ul>
-                <li><a href="https://focus.pilofy.ru/math/algebra">Алгебра</a></li>
-                <li><a href="https://focus.pilofy.ru/math/geometry">Геометрия</a></li>
-                <li><a href="https://focus.pilofy.ru/math/trigonometry">Тригонометрия</a></li>
+                <li><a href="https://focus.pilofy.ru/math/algebra" class="nav-link">Алгебра</a></li>
+                <li><a href="https://focus.pilofy.ru/math/geometry" class="nav-link">Геометрия</a></li>
+                <li><a href="https://focus.pilofy.ru/math/trigonometry" class="nav-link">Тригонометрия</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section>
-            <h2>Основные разделы</h2>
-            <p>Добро пожаловать в раздел по математике! Здесь собраны основные темы, формулы и теоремы по математике.</p>
+        <section class="intro">
+            <h2>Добро пожаловать в раздел по математике!</h2>
+            <p>Здесь собраны основные темы, формулы и теоремы по математике. Выбирайте нужную тему для быстрого изучения.</p>
         </section>
-        
-        <section>
+
+        <section class="topics">
             <h2>Основные темы</h2>
             <ul>
-                <li><a href="https://focus.pilofy.ru/math/algebra">Алгебра</a></li>
-                <li><a href="https://focus.pilofy.ru/math/geometry">Геометрия</a></li>
-                <li><a href="https://focus.pilofy.ru/math/trigonometry">Тригонометрия</a></li>
+                <li><a href="https://focus.pilofy.ru/math/algebra" class="button">Алгебра</a></li>
+                <li><a href="https://focus.pilofy.ru/math/geometry" class="button">Геометрия</a></li>
+                <li><a href="https://focus.pilofy.ru/math/trigonometry" class="button">Тригонометрия</a></li>
             </ul>
         </section>
     </main>
@@ -37,5 +38,19 @@
     <footer>
         <p>&copy; 2025 Focus PILOFY</p>
     </footer>
+
+    <div class="pulse-container">
+        <div class="pulse-dot"></div>
+        <div class="pulse-dot"></div>
+        <div class="pulse-dot"></div>
+        <!-- Добавь больше точек по необходимости -->
+    </div>
+
+    <script>
+        // GSAP анимация на заголовок
+        gsap.from("h1", { opacity: 0, y: -50, duration: 1 });
+        gsap.from(".intro p", { opacity: 0, x: -100, duration: 1, delay: 0.5 });
+        gsap.from(".button", { opacity: 0, y: 50, stagger: 0.3, duration: 1, delay: 1 });
+    </script>
 </body>
 </html>
